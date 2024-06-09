@@ -3,6 +3,7 @@ Scout for accepting input as CAS number or element name and perfrom strict valid
 """
 
 import os
+import re
 from datetime import datetime
 import fitz  # PyMuPDF
 import requests
