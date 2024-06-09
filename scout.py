@@ -3,20 +3,19 @@ Scout for accepting input as CAS number or element name and perfrom strict valid
 """
 
 import os
-import re
-from urllib.parse import urljoin, urlparse
-import json
 from datetime import datetime
 import fitz  # PyMuPDF
 import requests
 from bs4 import BeautifulSoup
 from googlesearch import search
 import aiohttp
+import json
 
 # Directories setup
-PDFS_FOLDER = "./verified"
-TEMP_FOLDER = "./unverified"
-LOGS_FOLDER = "./logs"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PDFS_FOLDER = os.path.join(BASE_DIR, "verified")
+TEMP_FOLDER = os.path.join(BASE_DIR, "unverified")
+LOGS_FOLDER = os.path.join(BASE_DIR, "logs")
 os.makedirs(PDFS_FOLDER, exist_ok=True)
 os.makedirs(TEMP_FOLDER, exist_ok=True)
 os.makedirs(LOGS_FOLDER, exist_ok=True)
